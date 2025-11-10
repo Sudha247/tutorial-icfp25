@@ -1,15 +1,13 @@
 # A Guided Tour Through Oxidized Caml
 
-This will be held at ICFP/SPLASH 2025, with inputs variously from Gavin Gray,
-Anil Madhavapeddy, KC Sivaramkrishnan, Richard Eisenberg, Chris Casinghino,
-Will Crichton, Shriram Krishnamurthi, Patrick Ferris.
+This was held at [ICFP/SPLASH 2025,](https://conf.researchr.org/track/icfp-splash-2025/icfp-splash-2025-tutorials)
+with inputs variously from Gavin Gray, Anil Madhavapeddy, KC Sivaramkrishnan,
+Richard Eisenberg, Chris Casinghino, Will Crichton, Shriram Krishnamurthi,
+Patrick Ferris, Max Slater, Megan Del Vecchio, Diana Kalinichenko, and Nadia Razek.
 
-URL: <https://conf.researchr.org/track/icfp-splash-2025/icfp-splash-2025-tutorials>
+SLIDES URL: <https://gavinleroy.com/oxcaml-tutorial-icfp25/>
 
-We have two 90 minute sessions that repeat, first at 1400-1530 and then
-1600-1730.
-
-# Getting started
+## Getting started (Hands-on Coding Session)
 
 Use the pre-built Docker Hub image.
 
@@ -27,34 +25,35 @@ $ opam switch
    5.3.0+tsan  ocaml-option-tsan.1,ocaml-variants.5.3.0+options  5.3.0+tsan
 ```
 
-# Session Outline
+## Session Outline
 
-## Conceptual Model (60m)
+### Conceptual Model (60m)
 
-- What: A slides introduction to OxCaml, these slides try to capture
-  "the spirit" of the language rather than its exact implementation as
-  that might change. This should leave participants with an
-  understanding of: what is a  mode, locality, local allocation, contention,
-  portability, and how these work together for data-race freedom.
+- What: A [slides introduction](https://gavinleroy.com/oxcaml-tutorial-icfp25/)
+  to OxCaml, these slides try to capture "the spirit" of the language rather
+  than its exact implementation as that might change. This should leave
+  participants with an understanding of: what is a  mode, locality, local
+  allocation, contention, portability, and how these work together for
+  data-race freedom.
 - Why: This is our chance to provide the OxCaml conceptual model and provide
   answers to the pretest questions, allowing participants to self-correct their
   model.
 
-## Activity (15m)
+### Activity (15m)
 
 - What: A collection of questions regarding the conceptual model of OxCaml.
 - Why: We want to test participants on the conceptual model of OxCaml to see
   how effective the lecture portion of the tutorial was with an eye towards
   improving these materials for the future.
 
-# Second Session
+## Second Session
 
 The "conceptual model" slides will be run twice, however, we do have
 a coding activity for those that really want write OxCaml
 code. This activity may also be done asynchronously throughout the week
 and ask us questions during the week.
 
-## Hands-on Activity
+### Hands-on Activity
 
 What: We provide a set of OCaml programs and ask participants to translate them
 to OxCaml with a specific goal in mind (e.g., *parallelize* the algorithm). We

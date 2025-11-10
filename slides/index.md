@@ -5,21 +5,6 @@
 Gavin Gray, Anil Madhavapeddy, KC Sivaramkrishnan, Richard Eisenberg, Chris Casinghino,
 Will Crichton, Shriram Krishnamurthi, Patrick Ferris, Max Slater, Megan Del Vecchio, Diana Kalinichenko, Nadia Razek
 
-
-<div style="display: grid; grid-template-columns: auto auto;">
-
-  *Before we start, answer this quick question!* 
-
-
-  <figure>
-    <img src="./assets/qr.svg" width="400" height="400" />
-    <figcaption>
-        <a href="https://tinyurl.com/icfp25-oxcaml"><code>tinyurl.com/icfp25-oxcaml</code></a>
-    </figcaption>
-  </figure>
-
-</div>
-
 {pause up}
 
 ## OxCaml provides
@@ -60,19 +45,20 @@ let perf_critical () =
 
 {pause}
 
-<div style="display: grid; grid-template-columns: auto auto; gap: 1em;">
-
-  {#memory-layout-correct}
-  <img src="./assets/symbols-heap-array.svg" />
-
-  <img src="./assets/symbols-heap-array-inline-syms.svg" />
-</div>
+{.question .horizontal}
+> {#memory-layout-correct}
+> <img src="./assets/symbols-heap-array.svg" />
+> 
+> {#memory-layout-wrong}
+> <img src="./assets/symbols-heap-array-inline-syms.svg" />
 
 {pause exec}
 ```slip-script
 let el = document.querySelector("#memory-layout-correct")
 console.log(el)
 slip.setClass(el, "correct", true)
+el = document.querySelector("#memory-layout-wrong")
+slip.setClass(el, "wrong", true)
 ```
 
 {pause}
@@ -153,7 +139,7 @@ let perf_critical () =
 
 {pause}
 
-This turns the allocation site for `[| |]` into a *local allocation*
+This turns the allocation site for `[| |]` into a *local allocation.* {pause} `stack_` usages are inserted automatically by OxCaml when possible
 
 {pause center}
 
@@ -185,18 +171,19 @@ fn perf_critical() {
 
 {pause center}
 
-<div style="display: grid; grid-template-rows: 1fr 1fr;">
-
-  {#memory-layout-local-correct}
-  <img src="./assets/symbols-local-to-heap.svg" />
-
-  <img src="./assets/symbols-local-inlined.svg" />
-</div>
+{.question .vertical}
+> {#memory-layout-local-correct}
+> <img src="./assets/symbols-local-to-heap.svg" />
+> 
+> {#memory-layout-local-wrong}
+> <img src="./assets/symbols-local-inlined.svg" />
 
 {pause exec}
 ```slip-script
 let el = document.querySelector("#memory-layout-local-correct")
 slip.setClass(el, "correct", true)
+el = document.querySelector("#memory-layout-local-wrong")
+slip.setClass(el, "wrong", true)
 ```
 
 {pause center}
@@ -304,17 +291,10 @@ let gensym_2 () =
 
 {pause}
 
-{#carousel-memory}
-> <img class="first" style="display: block;" src="./assets/symbols-to-callers-local-1.svg" />
-> <img class="second" style="display: none;" src="./assets/symbols-to-callers-local-2.svg" />
-
-{pause exec}
-```slip-script
-let first = document.querySelector("#carousel-memory .first")
-let second = document.querySelector("#carousel-memory .second")
-slip.setStyle(first, "display", "none")
-slip.setStyle(second, "display", "block")
-```
+{carousel #carousel-memory}
+>> ![first](./assets/symbols-to-callers-local-1.svg)
+> {change-page=carousel-memory}
+>> ![second](./assets/symbols-to-callers-local-2.svg)
 
 {pause}
 
@@ -519,7 +499,7 @@ The `@ local` is a *mode annotation*
 
 Every mode axis has a default value for backwards compatibility with OCaml
 
-The default for locality is the `global` mode
+The default for locality is the `global` mode. Default modes are bolded in the provided tables
 
 {pause up}
 
@@ -861,8 +841,6 @@ We’ve prepared a short activity to help you gauge your understanding of OxCaml
 
 [`tinyurl.com/oxcaml-icfp25-activity`](https://tinyurl.com/oxcaml-icfp25-activity)
 
-<img src="./assets/qr-activity.svg" width="500px" height="500px" />
-
 </div>
 
 {pause up}
@@ -870,12 +848,11 @@ We’ve prepared a short activity to help you gauge your understanding of OxCaml
 # OxCaml Summary <img style="float: right;" src="./assets/oxcaml-normal.svg" width="200px" height="200px" />
 
 {.remark}
-> We have programming activities for those who want to muck around: 
+> *Continue learning with ...*
 >
-> <div style="display:grid; place-items:center;"><a href="https://github.com/oxcaml/tutorial-icfp25"><code>github.com/oxcaml/tutorial-icfp25</code></a></div>
+> programming activities: [`github.com/oxcaml/tutorial-icfp25`](https://github.com/oxcaml/tutorial-icfp25)
 >
-> **OxCaml “office hours” daily:** 3-4 @ the Jane Street booth<br/>
-> *Can’t make it?* Email me at [`gavinleroy@brown.edu`](mailto:gavinleroy@brown.edu)
+> the documentation: [`oxcaml.org/documentation/`](https://oxcaml.org/documentation/)
 
 OxCaml provides *safe control* over performance-critical aspects of program behavior
 

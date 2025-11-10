@@ -107,16 +107,30 @@ table td, th {
   }
 }
 
-.correct {
-  position: relative;
+.question {
+  display: grid;
+  gap: 1em;
 
-  &::before {
-    position: absolute; top: 0; left: 0;
-    content: "✓";
-    color: green;
-    font-size: 2em;
+  &.horizontal { grid-template-columns: 1fr 1fr; }
+  &.vertical { grid-template-rows: 1fr 1fr; }
+
+  > .correct {
+    position: relative;
+
+    &::before {
+      position: absolute; top: 0; left: 0;
+      content: "✓";
+      color: green;
+      font-size: 2em;
+    }
+  }
+
+  > .wrong {
+    opacity: 0.5;
   }
 }
+
+
 
 .slip-body, .slide-body {
   /* padding:60px; */
