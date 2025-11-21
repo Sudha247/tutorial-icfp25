@@ -20,6 +20,10 @@
    (version 3.1.0+ox)))
 
 (lock_dir
+ (path "dune.lock")
+ (repositories overlay oxcaml upstream))
+
+(lock_dir
  (path "dev-tools.locks/ocaml-lsp-server")
  (pins ocamlbuild odoc-parser)
  (constraints
