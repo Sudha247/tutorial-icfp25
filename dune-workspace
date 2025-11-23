@@ -21,7 +21,7 @@
 
 (lock_dir
  (path "dune.lock")
- (repositories overlay oxcaml upstream))
+ (repositories :standard oxcaml))
 
 (lock_dir
  (path "dev-tools.locks/ocaml-lsp-server")
