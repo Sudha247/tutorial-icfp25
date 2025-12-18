@@ -7,23 +7,23 @@ Patrick Ferris, Max Slater, Megan Del Vecchio, Diana Kalinichenko, and Nadia Raz
 
 SLIDES URL: <https://gavinleroy.com/oxcaml-tutorial-icfp25/>
 
+### Note: Dune Package Management
+
+This fork of the ICFP tutorial builds with Dune Package Management. Please refer
+to the [upstream repo](https://github.com/oxcaml/tutorial-icfp25) for
+instructions on how to build with `opam`.
+
 ## Getting started (Hands-on Coding Session)
 
-Use the pre-built Docker Hub image.
+To build the project, we're going to do:
 
-1. Open this folder in VS Code
-2. Click "Reopen in Container" when prompted
-   - OR: `Cmd/Ctrl + Shift + P` → "Dev Containers: Reopen in Container"
-
-The docker image has three switches installed
-
-```bash
-$ opam switch
-#  switch      compiler                                          description
-→  5.2.0+ox    ocaml-variants.5.2.0+ox                           5.2.0+ox
-   5.3         ocaml-base-compiler.5.3.0                         5.3
-   5.3.0+tsan  ocaml-option-tsan.1,ocaml-variants.5.3.0+options  5.3.0+tsan
 ```
+$ cd tutorial-icfp25
+$ dune build
+```
+
+Note that, the first build can take a considerable amount of time as it has to
+build the compiler and all dependencies.
 
 ## Session Outline
 

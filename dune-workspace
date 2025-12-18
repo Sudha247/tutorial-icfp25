@@ -1,0 +1,45 @@
+(lang dune 3.21)
+(pkg enabled)
+
+(repository
+ (name oxcaml)
+ (url "git+https://github.com/Sudha247/oxcaml-opam-repository#unset-inside-dune"))
+
+
+(pin
+ (name ocamlbuild)
+ (url "git+https://github.com/Sudha247/ocamlbuild#oxcaml+dune")
+ (package
+   (name ocamlbuild)
+   (version 0.15.0+ox)))
+
+(pin
+ (name odoc-parser)
+ (url "git+https://github.com/Sudha247/odoc#replace-symlinks")
+ (package
+   (name odoc-parser)
+   (version 3.1.0+ox)))
+
+(lock_dir
+;  (path "dune.lock")
+ (repositories :standard oxcaml))
+
+; (lock_dir
+;  (path "dev-tools.locks/ocaml-lsp-server")
+;  (pins ocamlbuild odoc-parser)
+;  (constraints
+;    (ocaml-lsp-server (= 1.19.0+ox))
+;    (ocamlformat (= 0.26.2+ox))
+;    (ocaml-variants (= 5.2.0+ox)))
+;  (repositories overlay oxcaml upstream))
+
+; (lock_dir
+;  (path "dev-tools.locks/ocamlformat")
+;  (pins ocamlbuild)
+;  (constraints
+;    (ocaml-lsp-server (= 1.19.0+ox))
+;    (ocamlformat (= 0.26.2+ox))
+;    (ocaml-variants (= 5.2.0+ox)))
+;  (repositories overlay oxcaml upstream))
+
+
