@@ -19,6 +19,7 @@ To build the project, we're going to do:
 
 ```
 $ cd tutorial-icfp25
+$ dune pkg lock
 $ dune build
 ```
 
