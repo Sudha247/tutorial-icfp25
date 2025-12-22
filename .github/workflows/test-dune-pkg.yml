@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install autoconf (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew update
+          brew install autoconf
       - name: Use dune
         uses: ocaml-dune/setup-dune@v0
       - name: Build
