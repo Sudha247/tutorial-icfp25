@@ -1,6 +1,7 @@
 (lang dune 3.20)
 (pkg enabled)
 
+; (use fork of oxcaml opam-repository for faster compiler builds)
 (repository
  (name oxcaml)
  (url "git+https://github.com/Sudha247/oxcaml-opam-repository#unset-inside-dune"))
