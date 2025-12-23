@@ -1,0 +1,24 @@
+name: Build and test with dune pkg
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        runs-on: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.runs-on }}
+    continue-on-error: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install autoconf (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew update
+          brew install autoconf
+      - name: Use dune
+        uses: ocaml-dune/setup-dune@v0
+      - name: Build
+        run: dune pkg lock && dune build handson_activity/act01_data_races_and_tsan/
